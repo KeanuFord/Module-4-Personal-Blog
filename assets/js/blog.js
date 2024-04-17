@@ -35,7 +35,6 @@ function renderPosts() {
         postCard.appendChild(postContent);
         postCard.appendChild(postFooter);
         document.querySelector('#post-cards').appendChild(postCard);
-        
     }
 }
 
@@ -44,4 +43,41 @@ renderPosts();
 //Back Button
 document.getElementById('back-button').addEventListener('click', () => {
     window.location.href = 'index.html';
+});
+
+document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+    let html = document.querySelector('html');
+    html.classList.toggle('dark-mode');
+    
+    let header = document.querySelector('header');
+    header.classList.toggle('dark-mode');
+
+    let h1 = document.querySelector('h1');
+    h1.classList.toggle('dark-mode');
+
+    let body = document.querySelector('body');
+    body.classList.toggle('dark-mode');
+
+    let section = document.querySelector('#post-cards');
+    section.classList.toggle('dark-mode');
+
+    let cards = document.querySelectorAll('.card');
+    for(let i=0; i < cards.length; i++) {
+        cards[i].classList.toggle('dark-mode');
+    }
+
+    let cardHeaders = document.querySelectorAll('.card-header');
+    for(let i=0; i < cardHeaders.length; i++) {
+        cardHeaders[i].classList.toggle('dark-mode');
+    }
+
+    let cardContent = document.querySelectorAll('.card-content');
+    for(let i=0; i < cardContent.length; i++) {
+        cardContent[i].classList.toggle('dark-mode');
+    }
+
+    let cardFooters = document.querySelectorAll('.card-footer');
+    for(let i=0; i < cardFooters.length; i++) {
+        cardFooters[i].classList.toggle('dark-mode');
+    }
 });
